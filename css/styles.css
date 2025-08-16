@@ -16,7 +16,7 @@ input {
     outline: none;
 }
 
-button {
+#changeMe {
     background: #ff4da6;
     color: white;
     border: none;
@@ -47,5 +47,21 @@ ol {
     justify-content: space-between;
     align-items: center;
 }
+svg{
+    width: 20px;
+    height: 20px;
+}
+#deleteIcon, #doneIcon{
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+.icons{
+    display: flex;
+    justify-self: end;
+}
 
+.linethrough{
+    text-decoration: line-through;
+}
 
