@@ -1,23 +1,28 @@
+
 body {
     font-family: Arial, sans-serif;
-    background: #ffe6f2; 
+    background: radial-gradient(circle, #a2d9ff 0%, #e0f7ff 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30px;
+    padding: 20px;
 }
+
+
+
 
 input {
     padding: 10px;
     width: 250px;
-    border: 2px solid #ff4da6;
+    border: 2px solid #5dade2;
     border-radius: 8px;
     margin-bottom: 15px;
     outline: none;
 }
 
+
 #changeMe {
-    background: #ff4da6;
+    background: #5dade2;
     color: white;
     border: none;
     padding: 10px 18px;
@@ -25,11 +30,14 @@ input {
     cursor: pointer;
     font-size: 14px;
     margin-bottom: 20px;
+    transition: background 0.3s ease;
 }
 
-button:hover {
-    background: #e60073;
+#changeMe:hover {
+    background: #3498db;
 }
+
+
 
 ol {
     list-style: none;
@@ -42,26 +50,112 @@ ol {
     padding: 12px 15px;
     margin-bottom: 10px;
     border-radius: 10px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+     box-shadow: 0 3px 6px rgba(0,0,0,0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: all 0.3s ease;
 }
+.listBox:hover {
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
 svg{
     width: 20px;
     height: 20px;
 }
-#deleteIcon, #doneIcon{
+.deleteIcon, .doneIcon{
     background-color: white;
     border: none;
     cursor: pointer;
 }
+.deleteIcon:hover svg,
+.doneIcon:hover svg {
+  transform: scale(1.2);
+  transition: transform 0.2s ease;
+}
+
 .icons{
     display: flex;
     justify-self: end;
 }
 
-.linethrough{
-    text-decoration: line-through;
+.completed {
+  text-decoration: line-through;
+  color: gray;
+  opacity: 0.7;
 }
+
+
+.addTask{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 500px;
+    width: 100%;
+    gap: 10px;   
+  
+}
+.counter-container {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px;
+  background: #0077b6;
+  border-radius: 10px;
+  text-align: center;
+  width: 600px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  font-weight: bold;
+  color: #ffffff;
+}
+
+ol, .counter-container {
+  max-width: 600px;
+  width: 100%;
+}
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .addTask {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  input, #changeMe {
+    width: 100%;
+  }
+
+  ol, .counter-container {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
 
